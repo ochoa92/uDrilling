@@ -29,15 +29,30 @@ z_filtered = filtfilt(d,z);
 
 %% plot
 figure(1);
-plot(t, z, 'b', 'lineWidth', 2)
 hold on
+plot(t, z, 'b', 'lineWidth', 2)
 plot(t, z_filtered, '--r', 'lineWidth', 2)
 grid on;
-xlabel('t(s)');
-ylabel('z(m)');
-legend('z', 'z_{filtered}')
+xlabel('time(s)');
+ylabel('p_z(m)');
+legend('p_z', 'p_{z_{filtered}}')
 
 figure(2)
-plot(t, Fz)
+hold on
+subplot(3,1,1)
+plot(t, Fx,'b')
+grid on;
+xlabel('time(s)');
+ylabel('F_x(N)');
+subplot(3,1,2)
+plot(t, Fy,'g')
+grid on;
+xlabel('time(s)');
+ylabel('F_y(N)');
+subplot(3,1,3)
+plot(t, Fz,'r')
+grid on;
+xlabel('time(s)');
+ylabel('F_z(N)');
 
 
