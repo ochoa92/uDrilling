@@ -8,7 +8,7 @@ clc;
 close all;
 
 %% pattern
-filename = 'refs_operator/05';
+filename = 'refs_operator/06';
 A = importdata(filename);
 
 % t p_x p_xd p_y p_yd p_z p_zd Yaw(X) Yaw_d(Xd) Pitch(Y) Pitch_d(Yd) Roll(Z) Roll_d(Zd) Fx Fy Fz e_px e_py e_pz e_ox e_oy e_oz

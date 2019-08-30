@@ -10,7 +10,7 @@ close all;
 %% udrilling TOOL CAD
 
 mf = 0.322; % falange mass
-mp = 0.252; % piggyPower mass
+mp = 0.262; % piggyPower mass
 m = mf + mp;  % mass(kg)
 
 center_of_mass = [0 0 0.066];  % center of mass of load Vector
