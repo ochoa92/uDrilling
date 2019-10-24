@@ -11,7 +11,8 @@ close all;
 
 mf = 0.322; % falange mass
 mp = 0.262; % piggyPower mass
-m = mf + mp;  % mass(kg)
+md = 0.022; % d1 = 0.02 kg | d2 = 0.022 kg
+m = mf + mp + md;  % mass(kg)
 
 center_of_mass = [0 0 0.066];  % center of mass of load Vector
 
@@ -29,12 +30,13 @@ Iz = (1/2)*m*(r^2);
 I = [Ix 0 0;
      0 Iy 0;
      0 0 Iz];  
- 
+
+EE_length = 0.135; % 0.1 | d1 = 0.15 m | d2 = 0.135 m  
 % Transformation Matrix from Flange to End-Effector
-T = [1 0 0       0;
-     0 1 0 -0.0755;
-     0 0 1    0.10;
-     0 0 0       1];
+T = [1 0 0         0;
+     0 1 0   -0.0755;
+     0 0 1 EE_length;
+     0 0 0         1];
  
  angle = -pi/4;
  Tx = [1 0          0           0;
