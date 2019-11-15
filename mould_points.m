@@ -8,21 +8,21 @@ clc;
 close all;
 
 %% mould data -------------------------------------------------------------
-P = importdata("/home/helio/catkin_ws/src/TOOLING4G/franka_udrilling/co_manipulation_data/mould_points");
+P = importdata("/home/panda/catkin_ws/src/TOOLING4G/franka_udrilling/co_manipulation_data/mould_points");
 Pi = P(1,:);
 Pf = P(2,:);
 
 vec = Pf - Pi;
 N = 10; % number of points
 M = [];
-for i=linspace(0,1,N)
+for i=linspace(0,1,N) 
     M = [M; Pi+vec*i];
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Open file to write
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-filepath = "/home/helio/catkin_ws/src/TOOLING4G/franka_udrilling/co_manipulation_data/mould_line_points";
+filepath = "/home/panda/catkin_ws/src/TOOLING4G/franka_udrilling/co_manipulation_data/mould_line_points";
 fileID = fopen(filepath,'w');
 for i=1:length(M)
     points = M(i,:);
