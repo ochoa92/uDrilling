@@ -7,76 +7,65 @@ clear all;
 clc;
 close all;
 
-%% 0.6 mm
-%  t p_x p_y p_z Q_x Q_y Q_z Q_w Fx Fy Fz pEE_x pEE_y pEE_z
-A = importdata('/home/panda/TOOLING4G/uDrilling/refs_operator/new/06mm');
-t_06 = A.data(:,1);
-pz_06 = A.data(:,4);
-Fz_06 = A.data(:,11);
+%% POSITION
+% t p_x p_y p_z Q_x Q_y Q_z Q_w Fx Fy Fz pEE_x pEE_y pEE_z
+% 0.6 mm
+P = importdata('refs_operator/new/06mm');
+t_06 = P.data(:,1);
+pz_06 = P.data(:,4);
 
-% plot
+% 0.5 mm
+P = importdata('refs_operator/new/05mm');
+t_05 = P.data(:,1);
+pz_05 = P.data(:,4);
+
+% 0.4 mm
+P = importdata('refs_operator/new/04mm');
+t_04 = P.data(:,1);
+pz_04 = P.data(:,4);
+
+%% plot position
 figure(1);
+hold on
 plot(t_06, pz_06, 'b', 'linewidth',2)
+plot(t_05, pz_05, 'g', 'linewidth',2)
+plot(t_04, pz_04, 'r', 'linewidth',2)
 grid on;
-xlabel('t(s)', 'FontSize', 40);
-ylabel('P_{z}(m)', 'FontSize', 40);
-legend('operator (0.6 mm drill)', 'FontSize', 40)
+xlabel('t(s)', 'FontSize', 30);
+ylabel('P_{z}(m)', 'FontSize', 30);
+legend('operator (0.6 mm drill)','operator (0.5 mm drill)','operator (0.4 mm drill)', 'FontSize', 20)
 set(gca,'FontSize',30)
+xlim([0 90])
+ylim([0.23 0.41])
+box on
 
+%% FORCE
+% t Fx Fy Fz
+F = importdata('refs_operator/force_operator_results/0.6mm/1');
+t_06 = F.data(:,1);
+Fz_06 = F.data(:,4);
+
+F = importdata('refs_operator/force_operator_results/0.5mm/4');
+t_05 = F.data(:,1);
+Fz_05 = F.data(:,4);
+
+F = importdata('refs_operator/force_operator_results/0.4mm/2');
+t_04 = F.data(:,1);
+Fz_04 = F.data(:,4);
+
+%% plot force
 figure(2);
-plot(t_06, Fz_06, 'r', 'linewidth',2)
-grid on;
-xlabel('t(s)', 'FontSize', 40);
-ylabel('F_{z}(N)', 'FontSize', 40);
-legend('operator (0.6 mm drill)', 'FontSize', 40)
-set(gca,'FontSize',30)
-
-
-%% 0.5 mm
-%  t p_x p_y p_z Q_x Q_y Q_z Q_w Fx Fy Fz pEE_x pEE_y pEE_z
-A = importdata('/home/panda/TOOLING4G/uDrilling/refs_operator/new/05mm');
-t_05 = A.data(:,1);
-pz_05 = A.data(:,4);
-Fz_05 = A.data(:,11);
-
-% plot
-figure(3);
-plot(t_05, pz_05, 'b', 'linewidth',2)
-grid on;
-xlabel('t(s)', 'FontSize', 40);
-ylabel('P_{z}(m)', 'FontSize', 40);
-legend('operator (0.5 mm drill)', 'FontSize', 40)
-set(gca,'FontSize',30)
-
-figure(4);
-plot(t_05, Fz_05, 'r', 'linewidth',2)
-grid on;
-xlabel('t(s)', 'FontSize', 40);
-ylabel('F_{z}(N)', 'FontSize', 40);
-legend('operator (0.5 mm drill)', 'FontSize', 40)
-set(gca,'FontSize',30)
-
-%% 0.4 mm
-%  t p_x p_y p_z Q_x Q_y Q_z Q_w Fx Fy Fz pEE_x pEE_y pEE_z
-A = importdata('/home/panda/TOOLING4G/uDrilling/refs_operator/new/04mm');
-t_04 = A.data(:,1);
-pz_04 = A.data(:,4);
-Fz_04 = A.data(:,11);
-
-% plot
-figure(5);
-plot(t_04, pz_04, 'b', 'linewidth',2)
-grid on;
-xlabel('t(s)', 'FontSize', 40);
-ylabel('P_{z}(m)', 'FontSize', 40);
-ylim([0.2 0.36])
-legend('operator (0.4 mm drill)', 'FontSize', 40)
-set(gca,'FontSize',30)
-
-figure(6);
+hold on
+plot(t_06, Fz_06, 'b', 'linewidth',2)
+plot(t_05, Fz_05, 'g', 'linewidth',2)
 plot(t_04, Fz_04, 'r', 'linewidth',2)
 grid on;
-xlabel('t(s)', 'FontSize', 40);
-ylabel('F_{z}(N)', 'FontSize', 40);
-legend('operator (0.4 mm drill)', 'FontSize', 40)
+xlabel('t(s)', 'FontSize', 30);
+ylabel('F_{z}(N)', 'FontSize', 30);
+legend('operator (0.6 mm drill)','operator (0.5 mm drill)','operator (0.4 mm drill)', 'FontSize', 20)
 set(gca,'FontSize',30)
+xlim([0 72])
+% ylim([0.23 0.41])
+box on
+
+
