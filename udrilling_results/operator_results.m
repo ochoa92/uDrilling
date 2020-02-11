@@ -10,17 +10,17 @@ close all;
 %% POSITION
 % t p_x p_y p_z Q_x Q_y Q_z Q_w Fx Fy Fz pEE_x pEE_y pEE_z
 % 0.6 mm
-P = importdata('refs_operator/new/06mm');
+P = importdata('position_operator_results/new/06mm');
 t_06 = P.data(:,1);
 pz_06 = P.data(:,4);
 
 % 0.5 mm
-P = importdata('refs_operator/new/05mm');
+P = importdata('position_operator_results/new/05mm');
 t_05 = P.data(:,1);
 pz_05 = P.data(:,4);
 
 % 0.4 mm
-P = importdata('refs_operator/new/04mm');
+P = importdata('position_operator_results/new/04mm');
 t_04 = P.data(:,1);
 pz_04 = P.data(:,4);
 
@@ -41,15 +41,15 @@ box on
 
 %% FORCE
 % t Fx Fy Fz
-F = importdata('refs_operator/force_operator_results/0.6mm/1');
+F = importdata('force_operator_results/0.6mm/1');
 t_06 = F.data(:,1);
 Fz_06 = F.data(:,4);
 
-F = importdata('refs_operator/force_operator_results/0.5mm/4');
+F = importdata('force_operator_results/0.5mm/4');
 t_05 = F.data(:,1);
 Fz_05 = F.data(:,4);
 
-F = importdata('refs_operator/force_operator_results/0.4mm/2');
+F = importdata('force_operator_results/0.4mm/2');
 t_04 = F.data(:,1);
 Fz_04 = F.data(:,4);
 
