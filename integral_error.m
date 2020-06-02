@@ -1,7 +1,7 @@
 % =========================================================================
 % Project Name: TOOLING4G - Polishing
 % Author      : Hélio Ochoa
-% Description : 
+% Description : compute the integral error in 'x' iterations
 % =========================================================================
 clear all;
 clc;

@@ -1,7 +1,7 @@
 % =========================================================================
 % Project Name: TOOLING4G - Micro-Drilling
 % Author      : Hélio Ochoa
-% Description : 
+% Description : create a polishing synthetic reference
 % =========================================================================
 clear all;
 clc;
@@ -9,12 +9,12 @@ close all;
 
 
 %% Get the mould points
-filename = '/home/helio/kst/udrilling/mould/points';
-points = importdata(filename);
+% Attention to the filepath
+points = importdata('/home/ochoa/kst/udrilling/mould/points');
 
 %% Get the desired Rotation
-filename = '/home/helio/kst/udrilling/mould/desired_o';
-desired_o = importdata(filename);
+% Attention to the filepath
+desired_o = importdata('/home/ochoa/kst/udrilling/mould/desired_o');
 Qd = [desired_o(1,4) desired_o(1,1) desired_o(1,2) desired_o(1,3)];
 Rd = quat2rotm(Qd);
 

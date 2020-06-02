@@ -8,6 +8,7 @@ clc;
 close all;
 
 %% mould data -------------------------------------------------------------
+% Attention to the filepath
 P = importdata("/home/panda/catkin_ws/src/TOOLING4G/franka_udrilling/co_manipulation_data/mould_points");
 Pi = P(1,:);
 Pf = P(2,:);
@@ -22,6 +23,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Open file to write
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Attention to the filepath
 filepath = "/home/panda/catkin_ws/src/TOOLING4G/franka_udrilling/co_manipulation_data/mould_line_points";
 fileID = fopen(filepath,'w');
 for i=1:length(M)

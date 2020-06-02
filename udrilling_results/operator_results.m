@@ -60,12 +60,12 @@ plot(t_06, Fz_06, 'b', 'linewidth',2)
 plot(t_05, Fz_05, 'g', 'linewidth',2)
 plot(t_04, Fz_04, 'r', 'linewidth',2)
 grid on;
-xlabel('t(s)', 'FontSize', 30);
-ylabel('F_{z}(N)', 'FontSize', 30);
-legend('operator (0.6 mm drill)','operator (0.5 mm drill)','operator (0.4 mm drill)', 'FontSize', 20)
-set(gca,'FontSize',30)
+xlabel('t (s)', 'FontSize', 20);
+ylabel('F_{z} (N)', 'FontSize', 20);
+legend('operator (0.6 mm drill)','operator (0.5 mm drill)','operator (0.4 mm drill)', 'FontSize', 20, 'Location','northwest')
+set(gca,'FontSize',20)
 xlim([0 72])
-% ylim([0.23 0.41])
+% ylim([5 30])
 box on
 
 
